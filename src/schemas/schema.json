@@ -1,0 +1,37 @@
+{
+"properties": {
+    "forename": {
+        "type": "string"
+    },
+    "surname": {
+        "type": "string"
+    },
+    "birthDate": {
+        "type": "string",
+        "format": "date"
+    },
+    "age": {
+        "type": "string"
+    },
+    "emailAddress": {
+        "type": "object",
+        "properties": {
+            "oneOfEnum": {
+            "type": "string",
+            "title": "Email Address",
+            "oneOf": [
+                {
+                "const": "rey@ypmail.com",
+                "title": "Rey Monrey"
+                },
+                {
+                "const": "glenl@ypmail.com",
+                "title": "Glen Josh"
+                }
+            ]
+            }
+        }
+    }
+},
+    "required": ["forename", "surname", "birthDate"]
+}

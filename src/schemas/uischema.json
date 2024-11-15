@@ -1,0 +1,60 @@
+{
+
+    "type": "HorizontalLayout",
+    "elements": [
+        {
+            "type": "Control",
+            "scope": "#/properties/forename",
+            "label": "Forename(s)",
+            "placeholder": "John",
+            "options": {
+                "errors": {
+                    "empty": "Forename(s) is required!"
+                }
+            }
+        },
+        {
+            "type": "Control",
+            "scope": "#/properties/surname",
+            "label": "Surname",
+            "placeholder": "Smith",
+            "options": {
+                "errors": {
+                    "empty": "Surname is required!"
+                }
+            }
+        },
+        {
+            "type": "Control",
+            "scope": "#/properties/birthDate",
+            "label": "Date of Birth",
+                "options": {
+                    "constraint": {
+                    "type": "min",
+                    "value": 18
+                    },
+                    "errors": {
+                        "empty": "Date of Birth is required!"
+                    }
+                },
+                "validation": {
+                    "type": "custom",
+                    "function": "validateAge"
+                }
+        },
+        {
+            "type": "Control",
+            "scope": "#/properties/emailAddress/properties/oneOfEnum",
+            "title": "Email Address",
+            "placeholder": "name@domain.com",
+            "rule": {
+                "effect": "ENABLE",
+                "condition": {
+                    "scope": "#/properties/age",
+                    "schema": {  "const": 18 }
+                }
+            }
+        }
+    ]
+
+}
