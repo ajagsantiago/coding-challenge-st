@@ -2,10 +2,10 @@
   <main>
     <ProfileDetail>
       <template #default>
-          <ProfileDetailsForm ref="profileDetailsForm" />
+          <ProfileDetailsForm />
       </template>
     </ProfileDetail>
-    <MainFooter :onSubmit="handleSubmit" class="footer" />
+    <MainFooter :onSubmit="handleSubmit" :isFormValid="isFormValid" class="footer" />
   </main>
 </template>
 
@@ -16,14 +16,11 @@
   import { ref } from 'vue';
 
   const profileDetailsForm = ref(null);
-
+  const isFormValid = ref(false);
 
   const handleSubmit = () => {
-    // Access the form's submit method via the reference
-
     console.log("Value", profileDetailsForm.value)
   };
-  // :onSubmit="handleSubmit"
 </script>
 
 

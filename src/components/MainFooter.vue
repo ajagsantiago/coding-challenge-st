@@ -22,7 +22,6 @@
 
   const isFormValid = ref(props.isFormValid);
 
-
 </script>
 
 <style scoped>

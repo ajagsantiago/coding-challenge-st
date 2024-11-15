@@ -33,5 +33,5 @@
         }
     }
 },
-    "required": ["forename", "surname", "birthDate"]
+    "required": ["forename", "surname", "birthDate", "emailAddress"]
 }

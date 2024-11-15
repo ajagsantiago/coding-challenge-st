@@ -10,10 +10,10 @@
       :editor-id="control.label"
       :required="control.required"
       :validation-message="control?.uischema?.options?.errors.empty"
+      :validity-styles="false"
       class="input-field"
     >
     </KInput>
-    <Hint>{{ validationError }}</Hint>
     <div v-if="validationError" class="error-message">
         {{ validationError }}
     </div>
@@ -35,7 +35,8 @@
 
   const validate = () => {
     if (!control.value.data) {
-      validationError.value = control?.uischema?.options?.errors.empty;
+
+      validationError.value = control.value.uischema?.options?.errors.empty;
       return false;
     }
   }
@@ -68,10 +69,6 @@
 
   .error-message {
     color: var(--richdale-error-primary);
-  }
-
-  .k-input {
-
   }
 
   @media (min-width: 768px) {

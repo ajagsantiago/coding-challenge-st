@@ -8,11 +8,11 @@
             :id="control.id + '-input'"
             :disabled="!control.enabled"
             :editor-id="control.label"
-            :required="control.required"
             type="date"
             class="input-field"
             @change="onChange"
           />
+
       </div>
     </div>
 </template>
